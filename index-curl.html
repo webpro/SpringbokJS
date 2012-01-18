@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+		<h1>Springbok JS</h1>
+
+		<p>Using SpringbokJS in AMD setup (using curl.js).</p>
+
+		<div data-module="modules/WidgetC">
+			<p>Widget C initial content</p>
+		</div>
+
+		<div data-module="modules/WidgetD">
+			<p>Widget D initial content</p>
+		</div>
+
+		<div>
+			<button id="init">Initialize</button>
+			<button id="destruct">Destruct</button>
+		</div>
+
+		<script>
+			var curl = {
+				apiName: "require"
+			};
+		</script>
+
+        <script src="lib/curl.js"></script>
+
+		<script>
+			require('app');
+		</script>
+
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+		<h1>Springbok JS</h1>
+
+		<p>Using SpringbokJS in traditional setup (using DuckJS).</p>
+
+		<div data-module="modules/WidgetA">
+			<p>Widget A initial content</p>
+		</div>
+
+		<div data-module="modules/MyNamespace.WidgetB">
+			<p>Widget B initial content</p>
+		</div>
+
+		<!-- DuckJS -->
+		<script src="lib/duck.min.js"></script>
+
+		<!-- Springbok -->
+		<script>
+			window.springbok = {
+				autoload: true,
+				loader: Duck.loadScript
+			};
+			Duck.loadScript('springbok');
+		</script>
+
+    </body>
+</html>

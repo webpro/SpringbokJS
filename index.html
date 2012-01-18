@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>SpringbokJS</title>
+		<style type="text/css">
+			div[data-module] {
+				width: 200px;
+				margin: 10px;
+				border:1px solid #000;
+			}
+		</style>
+    </head>
+    <body>
+		<h1>Springbok JS demo</h1>
+
+		<p>Springbok binds a module to the specified HTML element. Example:</p>
+
+		<code>
+			&lt;div data-module=&quot;myNamespace.myWidget&quot;&gt;&lt;/div&gt;
+		</code>
+
+		<p>Or, alternatively in AMD style:</p>
+
+		<code>
+			&lt;div data-module=&quot;modules/myWidget&quot;&gt;&lt;/div&gt;
+		</code>
+
+		<h2>Demo</h2>
+
+		<small><code>&lt;div data-module=&quot;modules/WidgetA&quot;&gt;&lt;/div&gt;</code></small>
+		<div data-module="modules/WidgetA">
+			<p>Widget A initial content</p>
+		</div>
+
+		<small><code>&lt;div data-module=&quot;MyNamespace.WidgetB,WidgetD&quot;&gt;&lt;/div&gt;</code></small>
+		<div data-module="MyNamespace.WidgetB,WidgetD">
+			<p>Widget B &amp; D initial content</p>
+		</div>
+
+		<div>
+			<button id="init">Initialize</button>
+			<button id="destruct">Destruct</button>
+		</div>
+
+		<p>Please inspect the resources to see how (simple) it works, and how to set it up your way.</p>
+
+		<h2>Details (traditional vs. AMD-style)</h2>
+
+		<p>Widget definitions</p>
+
+		<ul>
+			<li>Widget A &amp; B are straight-forward modules (traditional JS objects).</li>
+			<li>Widget C is an AMD module.</li>
+			<li>Widget D is a hybrid module (AMD, CommonJS, traditional).</li>
+		</ul>
+
+		<p>The setup</p>
+
+		<ul>
+			<li>Using <a href="index.html">traditional script loading</a>, widget styles A+B and D work (C doesn't).</li>
+			<li>Using any <a href="index-require.html">AMD compliant</a> <a href="index-curl.html">script/module</a> <a href="index-bdLoad.html">loader</a>, widget C and D work (A+B doesn't).</li>
+			<li>D works in both cases, but needs some extra "ceremony" code.</li>
+			<li>Last but not least, you can also use your own script loader (example: <a href="index-duck.html">DuckJS</a>)</li>
+		</ul>
+
+		<script src="modules/WidgetA.js"></script>
+		<script src="modules/MyNamespace.WidgetB.js"></script>
+		<script src="modules/WidgetD.js"></script>
+
+		<!-- Springbok -->
+		<script>
+			window.springbok = {
+				autoload: false
+			}
+		</script>
+		<script src="springbok.js"></script>
+
+		<!-- Just a simple "app" to run this demo -->
+		<script src="app.js"></script>
+
+    </body>
+</html>

@@ -19,7 +19,7 @@
 		 * and see if the module is available afterwards.
 		 */
 
-		var define = config.global.define || function(moduleNames, callback, flag) {
+		var require = config.global.require || function(moduleNames, callback, flag) {
 
 			var modulePrototype = resolveFromString(moduleNames[0]);
 
@@ -31,7 +31,7 @@
 
 				config.loader.call(config.global, moduleNames[0], function() {
 
-					define(moduleNames, callback, true);
+					require(moduleNames, callback, true);
 
 				});
 
@@ -97,7 +97,7 @@
 
 			moduleNames.forEach(function(moduleName) {
 
-				define([moduleName], function(modulePrototype) {
+				require([moduleName], function(modulePrototype) {
 
 					var moduleInstance = new modulePrototype(viewNode);
 

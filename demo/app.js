@@ -1,6 +1,6 @@
 (function(define, window) {
 
-	define(['springbok'], function(springbok) {
+	define(['../springbok'], function(springbok) {
 
 		var d = window.document;
 

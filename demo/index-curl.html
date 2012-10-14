@@ -6,13 +6,13 @@
     <body>
 		<h1>Springbok JS</h1>
 
-		<p>Using SpringbokJS in AMD setup (using bdLoad).</p>
+		<p>Using SpringbokJS in AMD setup (using curl.js).</p>
 
-		<div data-module="modules/WidgetC">
+		<div data-module="demo/modules/WidgetC">
 			<p>Widget C initial content</p>
 		</div>
 
-		<div data-module="modules/WidgetD">
+		<div data-module="demo/modules/WidgetD">
 			<p>Widget D initial content</p>
 		</div>
 
@@ -21,10 +21,17 @@
 			<button id="destruct">Destruct</button>
 		</div>
 
-        <script src="lib/bdLoad.js"></script>
+		<script>
+			var curl = {
+				apiName: 'require',
+                baseUrl: '..'
+			};
+		</script>
+
+        <script src="lib/curl-0.7.0.min.js"></script>
 
 		<script>
-			require(["app"]);
+			require('demo/app');
 		</script>
 
     </body>

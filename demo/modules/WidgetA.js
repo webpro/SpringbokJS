@@ -4,5 +4,5 @@ function WidgetA(viewNode) {
 };
 
 WidgetA.prototype.init = function() {
-	this.viewNode.innerHTML += '<p>Widget A initialized</p>';
+	this.viewNode.innerHTML = '<p>Widget A initialized</p>';
 };

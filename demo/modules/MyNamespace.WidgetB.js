@@ -8,10 +8,10 @@ MyNamespace.WidgetB = function (viewNode) {
 MyNamespace.WidgetB.prototype = {
 
 	init: function() {
-		this.viewNode.innerHTML += '<p>Widget B initialized</p>';
+		this.viewNode.innerHTML = '<p>Widget B initialized</p>';
 	},
 
 	destruct: function() {
-		this.viewNode.innerHTML += '<p>Widget B destructed</p>';
+		this.viewNode.innerHTML = '<p>Widget B destructed</p>';
 	}
 };

@@ -6,7 +6,7 @@ define(function() {
 	};
 
 	Widget.prototype.init = function() {
-		this.viewNode.innerHTML += '<p>Widget C initialized</p>';
+		this.viewNode.innerHTML = '<p>Widget C initialized</p>';
 	};
 
 	return Widget;

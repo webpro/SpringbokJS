@@ -1,21 +1,23 @@
-(function(define, window) {
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(['../springbok'], factory);
+	} else {
+		root.App = factory(root.springbok);
+	}
+}(this, function (springbok) {
 
-	define(['../springbok'], function(springbok) {
+	var d = window.document;
 
-		var d = window.document;
+	d.getElementById('init').addEventListener('click', function() {
 
-		d.getElementById('init').addEventListener('click', function() {
+		springbok.initModules();
 
-			springbok.initModules();
+	}, false);
 
-		}, false);
+	d.getElementById('destruct').addEventListener('click', function() {
 
-		d.getElementById('destruct').addEventListener('click', function() {
+		springbok.destructModules();
 
-			springbok.destructModules();
+	}, false);
 
-		}, false);
-
-	});
-
-})(typeof define !== 'undefined' ? define : function(deps, factory) { factory(this.springbok); }, this);
+}));

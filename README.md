@@ -48,8 +48,7 @@ Bring your own AMD loader: the `require()` function will be used to load the mod
 		window.springbok = {
 			autoload: true,
 			context: document.getElementById('container'),
-			anchor: 'data-widget',
-			loader: Duck.loadScript
+			anchor: 'data-widget'
 		}
 	</script>
 
@@ -58,5 +57,3 @@ Bring your own AMD loader: the `require()` function will be used to load the mod
 **context**: the DOM node within modules are looked after (default: `document.body`)
 
 **anchor**: the attribute referencing module (default: `data-module`)
-
-**loader**: (usually not recommended) your custom script loader will be called in case both the traditional module definition and an AMD compliant loader are unavailable; it will be called with arguments (1) value of `anchor` (reference to module) and (2) internal callback to install module when script is loaded (default: `undefined`)

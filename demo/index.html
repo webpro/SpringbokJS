@@ -36,15 +36,15 @@
 		<p>Widget definitions</p>
 
 		<ul>
-			<li>Widget A &amp; B are straight-forward modules (traditional JS objects).</li>
-			<li>Widget C is an AMD module.</li>
-			<li>Widget D is a hybrid module (AMD, CommonJS, traditional).</li>
+			<li>Widget A &amp; B are plain JS constructors.</li>
+			<li>Widget C is an AMD module (exporting a constructor).</li>
+			<li>Widget D is a hybrid module (AMD/plain).</li>
 		</ul>
 
         <p>Notes</p>
 
         <ul>
-            <li>Widget C isn't included here as traditional style can't be mixed with AMD style modules.</li>
+            <li>Widget C isn't included here as AMD doesn't work without an AMD loader.</li>
             <li>Widget A doesn't get destructed as it doesn't have a <code>destruct()</code> method.</li>
         </ul>
 
